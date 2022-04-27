@@ -3,8 +3,6 @@ import {
   Controller,
   Delete,
   Get,
-  HttpCode,
-  HttpStatus,
   Param,
   Post,
   Put,
@@ -19,7 +17,6 @@ export class PokemonController {
   constructor(private PokeService: PokemonService) {}
 
   @Get()
-  @HttpCode(HttpStatus.OK)
   @ApiOperation({ summary: 'Return all pokemons' })
   async findAll(): Promise<PokemonDTO[]> {
     return await this.PokeService.findAll();
